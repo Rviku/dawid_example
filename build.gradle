@@ -1,0 +1,33 @@
+plugins {
+    id 'net.ltgt.apt' version '0.10'
+}
+
+group 'pl.rvik'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'net.ltgt.apt'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+dependencies {
+    compile 'com.fasterxml.jackson.core:jackson-core:2.9.6'
+    compile 'com.fasterxml.jackson.core:jackson-annotations:2.9.6'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.9.6'
+    compile 'ch.qos.logback:logback-classic:0.9.26'
+    compile 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.9.0'
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.0'
+
+    apt "org.projectlombok:lombok:1.18.0"
+}
